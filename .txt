@@ -1,0 +1,4 @@
+How to instal MongoDB => https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb 
+or => https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/
+Setup MongoDB Atlas => https://coding-boot-camp.github.io/full-stack/mongodb/how-to-set-up-mongodb-atlas
+Deploy with heroku and MongoDB atlas => https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas 
