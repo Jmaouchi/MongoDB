@@ -1,10 +1,14 @@
 let db;
 const request = indexedDB.open('pizza_hunt', 1);
 
+
 request.onupgradeneeded = function(event) {
   const db = event.target.result;
+
+  // create an object store with name new_pizza that will hold the data
   db.createObjectStore('new_pizza', { autoIncrement: true });
 };
+
 
 request.onsuccess = function(event) {
   // when db is successfully created with its object store (from onupgradedneeded event above), save reference to db in global variable
@@ -21,9 +25,6 @@ request.onerror = function(event) {
   console.log(event.target.errorCode);
 };
 
-
-// this function will be called in add-pizza.js file, and this function is to save the record to the indexDB whenever there is a cash error and 
-// no connection 
 function saveRecord(record) {
   const transaction = db.transaction(['new_pizza'], 'readwrite');
 
@@ -62,7 +63,7 @@ function uploadPizza() {
 
           const transaction = db.transaction(['new_pizza'], 'readwrite');
           const pizzaObjectStore = transaction.objectStore('new_pizza');
-          // clear all items in your store after the data is being sent to the real database
+          // clear all items in your store
           pizzaObjectStore.clear();
         })
         .catch(err => {
